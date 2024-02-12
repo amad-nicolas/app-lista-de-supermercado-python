@@ -2,7 +2,7 @@ class ListaDeCompras:
     def __init__(self):
         self.lista = []
     
-    def inserir(self):
+    def inserirItem(self):
         while True:
             item = input('Digite o nome do item: ')
             self.lista.append(item)
@@ -21,8 +21,14 @@ class ListaDeCompras:
             print(f'{i+1}.{self.lista[i]}')
             i+=1
     
+    def inserirValor(self):
+        total=0
+        while True:
+            valor=float(input('digite o preço do item: '))
+            quantidade=int(input('digite quantos itens ira comprar: '))
+            total+=valor*quantidade
 
 
 minhaLista=ListaDeCompras()
 minhaLista.inserir()
-minhaLista.exibir()
+
