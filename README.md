@@ -2,10 +2,5 @@
 
 Aplicativo de Lista de Compras em Python 🐍
 
-Este projeto é um aplicativo simples de lista de compras desenvolvido em Python. Facilita a organização e gerenciamento de itens a serem comprados, permitindo a adição, remoção e marcação de itens concluídos. Utilize-o para tornar suas idas ao supermercado mais eficientes e organizadas!
-
-Principais Recursos:
-- Adição e remoção fácil de itens da lista.
-- Marcação de itens concluídos durante as compras.
-- Interface de linha de comando (CLI) amigável.
+Este projeto é um aplicativo simples de lista de compras desenvolvido em Python.atualemente estou desenvolvendo a lista como uma aplicação via terminal usando a estrutura DataFrames de pandas ,apenas para desenvolver um esboço do que no futuro será um app mobile com interface gráfica usando kivy
 
