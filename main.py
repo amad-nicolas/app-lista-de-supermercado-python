@@ -4,19 +4,11 @@ import pandas as pd
 
 listaDeCompras=[]
 
-class Item:
-    def __init__(self,nome,preco=0,quantidade=0) :
-        self.nome=nome
-        self.preco=preco
-        self.quantidade=quantidade
-    def subTotal(self):
-        return self.preco*self.quantidade
 
 
 while True:
     nome_item = input("Digite o nome do item: ")
-    item = Item(nome_item)
-    dadosItem=[item.nome,item.preco,item.quantidade,item.subTotal()]
+    dadosItem=[nome_item,0,0,0]
     listaDeCompras.append(dadosItem)
 
     continuar = input("Deseja continuar (s/n)? ")
@@ -26,4 +18,20 @@ while True:
 df=pd.DataFrame(listaDeCompras)
 df.columns = ['Nome', 'Preco', 'Quantidade', 'Subtotal']
 
-print(df.to_string(index=False))
+while True:
+    os.system('cls')
+    print(df.to_string(index=False))
+    indice=int(input('Digite o indice do item ao qual editar:'))
+    preco=float(input('Digite o preço : '))
+    quantidade=float(input('Digite a quantidade : '))
+    
+    df.iloc[indice,1]=preco
+    df.iloc[indice,2]=quantidade
+    df.iloc[indice,3]=preco*quantidade
+    
+    continuar = input("Deseja continuar (s/n)? ")
+    if continuar.lower() != 's':
+        break
+
+
+df.to_csv('listaDeCompras.csv',index=False)
